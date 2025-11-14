@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #a3c3ff, #9bcdeb);
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    padding: 10px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #1f3bb3;
+}
+
+nav a {
+    margin: 0 18px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #333;
+    font-weight: 500;
+}
+
+.btn-start {
+    padding: 10px 22px;
+    border: none;
+   background-color:#697cf9;
+    color: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s; 
+}
+.btn-start:hover{
+    background-color:#3f56ee;
+}
+
+/* HERO SECTION */
+.hero {
+    margin: 60px auto;
+    width: 90%;
+    background: #fff;
+    padding: 60px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1f1f7a;
+    line-height: 1.2;
+}
+
+.text-content p {
+    margin: 20px 0;
+    font-size: 15px;
+    color: #555;
+    max-width: 380px;
+}
+
+.info-btn {
+    padding: 12px 30px;
+    background-color: #5a6cde;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+.info-btn:hover{
+    background-color: #4741c7;
+}
+
+.illustration img {
+    width: 420px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .illustration img {
+        width: 300px;
+        margin-top: 40px;
+    }
+}
+
+/* CARD SECTION */
+.cards-section {
+    width: 90%;
+    margin: 70px auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* Individual Card */
+.card {
+    width: 40%;
+    min-width: 300px;
+    height:250px;
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: all 0.35s ease;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* Curved Top */
+.card-top {
+  
+    background-color:#628ce1;
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+    width: 100%;
+    padding: 35px 0;
+    border-radius: 0 0 50% 50%;
+    margin-bottom: 20px;
+}
+
+/* Paragraph */
+.card p {
+    font-size: 15px;
+    margin: 20px 0 25px;
+    color: #555;
+}
+
+/* Button inside card */
+.card-btn {
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #4c5cff, #7aa6ff);
+    border: none;
+    color: white;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Button hover */
+.card-btn:hover {
+    background: linear-gradient(90deg, #7aa6ff, #4c5cff);
+    transform: scale(1.07);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .cards-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        margin-bottom: 40px;
+    }
+}
+
+
+/* FOOTER SECTION */
+.footer {
+    background-color: #26396b;  
+    color: white;
+    padding: 70px 50px 30px;
+    position: relative;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: auto;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.footer-column {
+    width: 30%;
+    min-width: 220px;
+}
+
+.footer-column h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-column a,
+.footer-column p {
+    display: block;
+    margin: 8px 0;
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+/* Hover colour change */
+.footer-column a:hover {
+    color: #ffffff;
+    font-weight: 500;
+    padding-left: 5px;
+}
+
+.footer-column p:hover {
+    color: #ffffff;
+}
+
+copyright {
+    margin-top: 40px;
+    font-size: 14px;
+    opacity: 0.9;
+    text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-column {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
