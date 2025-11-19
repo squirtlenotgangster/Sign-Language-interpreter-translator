@@ -1,1 +1,97 @@
+📘 Sign Language Images Dataset
 
+A curated collection of images representing sign language gestures. This dataset is intended for use in machine learning, computer vision research, educational tools, and accessibility-focused applications.
+
+🗂️ Project Overview
+
+This repository contains labeled images of sign language gestures. The primary goal is to support researchers and developers in building models that can recognize sign language signs accurately and help advance accessible communication technologies.
+
+📁 Dataset Structure
+/dataset
+    /A
+        A_01.jpg
+        A_02.jpg
+        …
+    /B
+    /C
+    …
+    /OtherSigns
+    /Metadata
+        labels.csv
+
+Folder Details:
+
+A, B, C… – Folders containing images of hand signs representing letters (or specific gestures).
+
+OtherSigns – Non-alphabet signs (e.g., numbers, special signs, dynamic gestures captured as frames).
+
+Metadata/labels.csv – Contains image names along with corresponding labels.
+
+🏷️ Labels
+
+The dataset currently includes the following types of labels:
+
+Alphabet signs (A–Z)
+
+Numeric signs (0–9) (optional if included)
+
+Custom gestures
+
+Metadata fields such as:
+
+image_id
+
+label
+
+sign_type (static or dynamic)
+
+hand_used (left, right, both)
+
+lighting_conditions or any other notes as applicable
+
+If you'd like me to generate a sample labels.csv, just ask!
+
+🖼️ Image Specifications
+
+Format: JPG/PNG
+
+Resolution: Varies (cropped and centered where possible)
+
+Backgrounds: Neutral or mixed, depending on source
+
+Orientation: Hand centered within frame
+
+📌 Usage
+
+You may use this dataset for:
+
+✔️ Machine learning model training
+✔️ Gesture recognition research
+✔️ Educational sign-language projects
+✔️ Accessibility tools for deaf and hard-of-hearing communities
+
+⚖️ License
+
+Specify your license here. Common options include:
+
+MIT License
+
+CC BY 4.0
+
+CC BY-NC 4.0 (non-commercial)
+
+If you need help choosing a license, I can assist.
+
+🙌 Contribution
+
+Contributions are welcome! You may contribute by:
+
+Adding more sign images
+
+Improving dataset labeling
+
+Submitting metadata corrections
+
+Providing scripts for preprocessing
+
+Please open a pull request or create an issue for discussion.
