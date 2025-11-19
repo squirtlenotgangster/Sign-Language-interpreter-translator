@@ -1,1 +1,129 @@
-This folder contains all the dataset required for training of the model for Sign Language Interpreter
+📘 Sign Language Interpreter Dataset
+
+A high-quality dataset designed for training and evaluating machine learning models for sign language interpretation. This dataset includes labeled visual samples representing a variety of signs, gestures, and expressions used in sign language communication.
+
+📂 Dataset Overview
+Property	Description
+Domain	Sign Language / Gesture Recognition
+Modality	Images / Videos / Keypoints (customize as needed)
+Size	Add number of samples
+Labels	List labels/classes (e.g., alphabet, words, phrases)
+Format	.jpg, .mp4, .json (customize)
+Intended Use	Machine learning, deep learning, accessibility apps, sign-to-text systems
+📝 Description
+
+This dataset was created to support research and development in automatic sign language interpretation. It includes diverse samples of hands, body posture, and facial expressions to help models capture essential components of sign communication.
+
+The dataset aims to enable:
+
+Sign classification
+
+Gesture recognition
+
+Sequence-to-text translation
+
+Accessibility and assistive technologies
+
+Human–computer interaction research
+
+📁 Dataset Structure
+dataset/
+│
+├── train/
+│   ├── class_1/
+│   ├── class_2/
+│   └── ...
+│
+├── val/
+│   ├── class_1/
+│   ├── class_2/
+│   └── ...
+│
+└── labels.json
+
+
+Adjust this structure to match your actual dataset.
+
+🧪 Data Collection Process
+
+Describe how the data was collected:
+
+Devices used (camera, phone, Kinect, etc.)
+
+Recording conditions (lighting, background, frame rate)
+
+Participant diversity
+
+Annotation process
+
+Example:
+
+Videos were recorded at 1080p, 30 FPS in controlled indoor lighting. Each sign was performed by multiple participants to capture variation in hand shape, movement, and expression.
+
+🏷️ Labels & Annotation
+
+Provide details about your labeling system:
+
+Alphabet (A–Z)
+
+Numbers (0–9)
+
+Common words (e.g., “Hello”, “Yes”, “Thank you”)
+
+Gloss format if applicable
+
+Annotation tools used (CVAT, LabelImg, custom scripts, etc.)
+
+💡 Usage
+Python Example (Images)
+import cv2
+import os
+
+path = "dataset/train/class_1"
+for img in os.listdir(path):
+    image = cv2.imread(os.path.join(path, img))
+    cv2.imshow("Sample", image)
+    cv2.waitKey(0)
+
+PyTorch DataLoader Example
+from torchvision import datasets, transforms
+
+transform = transforms.Compose([
+    transforms.Resize((224, 224)),
+    transforms.ToTensor()
+])
+
+dataset = datasets.ImageFolder("dataset/train", transform=transform)
+
+🚀 Applications
+
+Sign language recognition models
+
+Real-time interpreter systems
+
+Pose estimation and gesture control
+
+Augmented and virtual reality accessibility tools
+
+🔒 License
+
+Specify how others can use your dataset:
+
+MIT
+
+CC BY 4.0
+
+CC BY-NC 4.0
+
+Custom license
+
+Example:
+
+This dataset is released under the CC BY-NC 4.0 License, meaning it may be used for research and non-commercial purposes with attribution.
+
+🙌 Contributors
+
+List dataset creators or contributors.
+
+- Your Name (@yourGithub)
+- Contributors...
