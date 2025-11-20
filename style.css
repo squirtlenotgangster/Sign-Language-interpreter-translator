@@ -24,6 +24,12 @@ header {
     font-weight: bold;
     color: #1f3bb3;
 }
+.logo img {
+    width: 170px;   /* adjust size as needed */
+    height: 80px;
+    object-fit: contain;
+}
+
 
 nav a {
     margin: 0 18px;
@@ -45,6 +51,10 @@ nav a {
 }
 .btn-start:hover{
     background-color:#3f56ee;
+}
+.btn-start a{
+    text-decoration: none;
+    color: #ffffff;
 }
 
 /* HERO SECTION */
@@ -85,6 +95,10 @@ nav a {
 }
 .info-btn:hover{
     background-color: #4741c7;
+}
+.info-btn a{
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .illustration img {
