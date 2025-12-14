@@ -1,0 +1,257 @@
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* =========================
+   BODY BACKGROUND (VIVID BLUE)
+========================= */
+body {
+    min-height: 100vh;
+    background: radial-gradient(
+        circle at top,
+        #1f3bb3 0%,
+        #0a2a8a 40%,
+        #061b4d 100%
+    );
+}
+
+/* =========================
+   SECTION
+========================= */
+.pricing-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.pricing-section h1 {
+    font-size: 44px;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #dbe6ff;
+    max-width: 720px;
+    margin: 0 auto 55px;
+    line-height: 1.6;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.pricing-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 34px;
+    max-width: 1250px;
+    margin: auto;
+}
+
+/* =========================
+   CARD BASE
+========================= */
+.pricing-card {
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #eaf0ff 45%,
+        #d6e4ff 100%
+    );
+    border-radius: 26px;
+    padding: 36px 28px;
+    position: relative;
+    box-shadow:
+        0 22px 45px rgba(0, 0, 0, 0.28),
+        inset 0 0 0 2px rgba(31, 59, 179, 0.18);
+    transition: all 0.35s ease;
+    overflow: hidden;
+}
+
+/* Decorative glow layer */
+.pricing-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at top left,
+        rgba(31, 59, 179, 0.18),
+        transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.pricing-card::before {
+    pointer-events: none;
+}
+
+
+.pricing-card:hover {
+    transform: translateY(-14px) scale(1.04);
+    box-shadow:
+        0 36px 70px rgba(0, 0, 0, 0.45),
+        0 0 0 4px rgba(31, 59, 179, 0.35);
+}
+
+/* =========================
+   CARD TEXT
+========================= */
+.pricing-card h2 {
+    font-size: 30px;
+    color: #0a2a8a;
+    letter-spacing: 0.4px;
+}
+
+.tagline {
+    margin-top: 8px;
+    margin-bottom: 22px;
+    font-size: 15px;
+    color: #4b5fa7;
+}
+
+/* =========================
+   COURSE IMAGE (PORTRAIT)
+========================= */
+.pricing-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #c7d6ff, #9fb6ff);
+    padding: 10px;
+    margin-bottom: 24px;
+    box-shadow:
+        inset 0 0 0 3px rgba(31, 59, 179, 0.22),
+        0 14px 30px rgba(31, 59, 179, 0.4);
+}
+
+/* =========================
+   PRICE
+========================= */
+.price {
+    font-size: 36px;
+    font-weight: 800;
+    color: #0a7cff;
+    margin: 12px 0 14px;
+}
+
+/* =========================
+   FEATURES
+========================= */
+.feature {
+    font-size: 15px;
+    color: #1e2f6f;
+    margin-bottom: 6px;
+}
+
+/* =========================
+   ENROLL BUTTON
+========================= */
+.buy-btn {
+    margin-top: 30px;
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 45px;
+    background: linear-gradient(
+        135deg,
+        #0a7cff,
+        #1f3bb3,
+        #0a7cff
+    );
+    background-size: 220% 220%;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    box-shadow:
+        0 14px 32px rgba(10, 124, 255, 0.8);
+}
+
+.buy-btn:hover {
+    background-position: right center;
+    transform: translateY(-4px) scale(1.03);
+    box-shadow:
+        0 22px 45px rgba(10, 124, 255, 1),
+        0 0 0 4px rgba(255, 255, 255, 0.45);
+}
+
+.buy-btn:active {
+    transform: scale(0.96);
+    box-shadow:
+        0 8px 18px rgba(10, 124, 255, 0.7);
+}
+
+/* =========================
+   MOST POPULAR (GOLD)
+========================= */
+.popular {
+    background: linear-gradient(
+        180deg,
+        #fff6d1,
+        #ffed9f,
+        #ffd700
+    );
+    border: 5px solid #d4af37;
+    box-shadow:
+        0 30px 60px rgba(212, 175, 55, 0.6);
+}
+
+.badge {
+    position: absolute;
+    top: -16px;
+    right: 22px;
+    background: linear-gradient(135deg, #ffd700, #d4af37);
+    color: #4a3500;
+    padding: 7px 22px;
+    font-size: 13px;
+    font-weight: 900;
+    border-radius: 25px;
+    letter-spacing: 0.6px;
+    box-shadow:
+        0 10px 28px rgba(212, 175, 55, 0.9);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .pricing-section h1 {
+        font-size: 36px;
+    }
+
+    .pricing-card img {
+        height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing-section {
+        padding: 60px 15px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .pricing-card h2 {
+        font-size: 26px;
+    }
+
+    .price {
+        font-size: 32px;
+    }
+
+    .pricing-card img {
+        height: 200px;
+    }
+}
