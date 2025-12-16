@@ -5,405 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Learning App</title>
 
-    <style>
-      body {
-        margin: 0;
-        
-        font-family: Poppins, sans-serif;
-        background: #EEEEEE;
-        transition: 0.3s ease;
-      }
+    <!-- External CSS -->
+    <link rel="stylesheet" href="learn.css">
 
-      /* NAVBAR */
-      .navbar {
-        width: 100%;
-        background: #ffffff;
-        padding: 15px 30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #ddd;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
-
-      .nav-left a {
-        margin-right: 25px;
-        text-decoration: none;
-        font-size: 17px;
-        color: #333;
-        font-weight: 500;
-      }
-
-      .nav-left a:hover {
-        color: #007bff;
-      }
-
-      .get-started {
-        padding: 10px 15px;
-        background: #007bff;
-        color: white;
-        font-weight: 600;
-        border-radius: 8px;
-        text-decoration: none;
-      }
-
-      .get-started:hover {
-        background: #005ec7;
-      }
-
-      /* DARK MODE FOR NAVBAR */
-      body.dark .navbar {
-        background: #1e1e1e;
-        border-color: #333;
-      }
-      body.dark .nav-left a {
-        color: #e0e0e0;
-      }
-
-      /* Containers */
-
-      .container {
-        padding: 80px 20px;
-        text-align: center;
-      }
-
-      .container h1 {
-        font-size: 44px;
-        color: #007bff;
-        margin-bottom: 12px;
-      }
-
-      .subtitle {
-        font-size: 18px;
-        color: #0000FF;
-        max-width: 720px;
-        margin: 0 auto 55px;
-        line-height: 1.6;
-      }
-
-      /* Search bar */
-      #searchBox {
-        width: 100%;
-        padding: 12px;
-        margin: 20px 0;
-        border-radius: 10px;
-        border: 1px solid #aaa;
-        font-size: 16px;
-      }
-
-      /* Section buttons */
-      .section-buttons div {
-        display: inline-block;
-        margin: 12px;
-        padding: 12px 25px;
-        background: #007bff;
-        color: #fff;
-        border-radius: 10px;
-        cursor: pointer;
-        font-weight: 600;
-        transition: 0.2s;
-      }
-
-      .section-buttons div:hover {
-        background: #005ec7;
-      }
-
-      /* Grid Cards */
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        margin-top: 20px;
-      }
-
-      .card {
-        background: linear-gradient(
-          180deg,
-          #ffffff 0%,
-          #eaf0ff 45%,
-          #d6e4ff 100%
-        );
-        border-radius: 26px;
-        padding: 36px 28px;
-        position: relative;
-        box-shadow: 0 22px 45px rgba(0, 0, 0, 0.28),
-          inset 0 0 0 2px rgba(31, 59, 179, 0.18);
-        transition: all 0.35s ease;
-        overflow: hidden;
-      }
-
-      /* Decorative glow layer */
-      .card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(
-          circle at top left,
-          rgba(31, 59, 179, 0.18),
-          transparent 60%
-        );
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-
-      .card::before {
-        pointer-events: none;
-      }
-
-      .card:hover {
-        transform: translateY(-14px) scale(1.04);
-        box-shadow: 0 36px 70px rgba(0, 0, 0, 0.45),
-          0 0 0 4px rgba(31, 59, 179, 0.35);
-      }
-
-      .card h3 {
-        font-size: 30px;
-        color: #0a2a8a;
-        letter-spacing: 0.4px;
-      }
-
-      .card img {
-        width: 100%;
-        border-radius: 10px;
-        margin-bottom: 12px;
-      }
-
-      .card button {
-        margin-top: 30px;
-        width: 100%;
-        padding: 16px;
-        border: none;
-        border-radius: 45px;
-        background: linear-gradient(135deg, #0a7cff, #1f3bb3, #0a7cff);
-        background-size: 220% 220%;
-        color: #ffffff;
-        font-size: 18px;
-        font-weight: 700;
-        letter-spacing: 0.4px;
-        cursor: pointer;
-        transition: all 0.35s ease;
-        box-shadow: 0 14px 32px rgba(10, 124, 255, 0.8);
-      }
-
-      .card button:hover {
-        background-position: right center;
-        transform: translateY(-4px) scale(1.03);
-        box-shadow: 0 22px 45px rgba(10, 124, 255, 1),
-          0 0 0 4px rgba(255, 255, 255, 0.45);
-      }
-
-      .card button:active {
-        transform: scale(0.96);
-        box-shadow: 0 8px 18px rgba(10, 124, 255, 0.7);
-      }
-
-      /* Dark mode card */
-      body.dark .card {
-        background: #1f1f1f;
-        color: white;
-        box-shadow: none;
-      }
-
-      /* Progress bar */
-      .progress-container {
-        margin: 20px 0;
-      }
-
-      .progress {
-        width: 100%;
-        background: #ddd;
-        height: 10px;
-        border-radius: 10px;
-      }
-
-      .progress-fill {
-        height: 10px;
-        width: 0%;
-        background: #007bff;
-        border-radius: 10px;
-        transition: 0.3s;
-      }
-
-      /* Theme Toggle */
-      .theme-toggle {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #333;
-        color: white;
-        padding: 10px 15px;
-        border-radius: 50%;
-        cursor: pointer;
-        font-size: 20px;
-      }
-      body.dark {
-        background: #121212;
-        color: #e0e0e0;
-      }
-
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        .navbar {
-          padding: 10px 15px;
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .nav-left {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          margin-bottom: 10px;
-        }
-
-        .nav-left a {
-          margin: 5px 0;
-          font-size: 15px;
-        }
-
-        .get-started {
-          align-self: center;
-          padding: 8px 10px;
-          font-size: 14px;
-        }
-
-        .container {
-          padding: 60px 15px;
-        }
-
-        .container h1 {
-          font-size: 32px;
-        }
-
-        .subtitle {
-          font-size: 16px;
-          margin-bottom: 40px;
-        }
-
-        #searchBox {
-          padding: 10px;
-          font-size: 14px;
-        }
-
-        .section-buttons div {
-          display: block;
-          margin: 8px 0;
-          padding: 10px 20px;
-          font-size: 14px;
-        }
-
-        .grid {
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 15px;
-        }
-
-        .card {
-          padding: 24px 20px;
-        }
-
-        .card h3 {
-          font-size: 24px;
-        }
-
-        .card button {
-          padding: 12px;
-          font-size: 16px;
-        }
-
-        .theme-toggle {
-          bottom: 15px;
-          right: 15px;
-          padding: 8px 12px;
-          font-size: 18px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .navbar {
-          padding: 8px 10px;
-          align-items: center;
-        }
-
-        .nav-left {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .nav-left a {
-          margin: 4px 0;
-          font-size: 14px;
-        }
-
-        .get-started {
-          padding: 6px 10px;
-          font-size: 13px;
-        }
-
-        .container h1 {
-          font-size: 28px;
-        }
-
-        .subtitle {
-          font-size: 14px;
-          margin-bottom: 30px;
-        }
-
-        #searchBox {
-          padding: 8px;
-          font-size: 13px;
-        }
-
-        .section-buttons div {
-          padding: 8px 15px;
-          font-size: 13px;
-        }
-
-        .grid {
-          grid-template-columns: 1fr;
-          gap: 10px;
-        }
-
-        .card {
-          padding: 20px 16px;
-        }
-
-        .card h3 {
-          font-size: 20px;
-        }
-
-        .card button {
-          padding: 10px;
-          font-size: 14px;
-        }
-
-        .progress-container button {
-          font-size: 14px;
-          padding: 8px 12px;
-        }
-
-        .theme-toggle {
-          bottom: 10px;
-          right: 10px;
-          padding: 6px 10px;
-          font-size: 16px;
-        }
-      }
-    </style>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <!-- NAVBAR -->
-    <div class="navbar">
-      <div class="nav-left">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Courses</a>
-        <a href="#">Contact</a>
-      </div>
-      
-    </div>
+   <!-- NAVBAR -->
+<header class="navbar">
+     <div class="logo">
+            <img src="../../logo.png">
+        </div>
+        <nav>
+            <a href="../../index.html">Home</a>
+            <a href="../About/about.html">About us</a>
+            <a href="../Learning/learn.html">Learning</a>
+            <a href="../Pricing/pricing.html">Pricing</a>
+            <a href="../Contact_us/contact.html">Contact</a>
+        </nav>
+         <button class="btn-start">
+             <a href="../Login/indexlgn.html">Get Started</a>
+        </button>
+</header>
+<!--  -->
 
     <div class="container">
       <h1>KnowledgeHub</h1>
@@ -427,7 +53,9 @@
 
       <!-- Progress -->
       <div class="progress-container">
-        <div class="progress"><div class="progress-fill"></div></div>
+        <div class="progress">
+          <div class="progress-fill"></div>
+        </div>
         <button onclick="resetProgress()" style="margin-top: 10px">
           Undo Progress
         </button>
@@ -438,19 +66,57 @@
     </div>
 
     <!-- Theme Toggle -->
-    <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
+    <div class="theme-toggle" onclick="toggleTheme()">O</div>
+
+    <!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-column">
+            <h3>Follow Us</h3>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">Youtube</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Links</h3>
+            <a href="../About/about.html">About us</a>
+            <a href="../Learning/learn.html">Learning</a>
+            <a href="../Pricing/pricing.html">Pricing</a>
+            <a href="../Contact_us/contact.html">Contact</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Made by</h3>
+            <p>SquirtleGang</p>
+            <p>Kolkata, West Bengal</p>
+            <p>India</p>
+        </div>
+
+    </div>
+
+    <p class="copyright">
+        Copyright © 2025 All rights reserved | This template is made with ♥
+    </p>
+</footer>
 
     <script>
-      /* ---------------------- THEME MODE ---------------------- */
-      function toggleTheme() {
-        document.body.classList.toggle("dark");
-        localStorage.setItem("theme", document.body.classList.contains("dark"));
-      }
-      if (localStorage.getItem("theme") === "true") {
-        document.body.classList.add("dark");
-      }
+  function toggleTheme() {
+  document.body.classList.toggle("light");
+  localStorage.setItem(
+    "theme",
+    document.body.classList.contains("light") ? "light" : "dark"
+  );
+}
 
-      /* ---------------------- PROGRESS ---------------------- */
+/* Apply saved theme */
+if (localStorage.getItem("theme") === "light") {
+  document.body.classList.add("light");
+}
+
+
       let progress = JSON.parse(localStorage.getItem("progress") || "{}");
 
       function updateProgress() {
@@ -460,38 +126,30 @@
           (learned / total) * 100 + "%";
       }
 
-      /* ---------------------- SECTION DATA ---------------------- */
       const words = ["Hello", "ThankYou", "Sorry", "Please", "ILoveYou", "Yes"];
       const alphabets = Array.from("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-      const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+      const numbers = ["0","1","2","3","4","5","6","7","8","9"];
 
-      /* ---------------------- CREATE CARDS ---------------------- */
       function createCards(list, folder) {
         let cardHTML = "";
         list.forEach((item) => {
           cardHTML += `
-        <div class="card">
+          <div class="card">
             <h3>${item}</h3>
             <img src="${folder}/${item}.jpg" alt="">
             <button onclick="playVideo('${item}')">Watch Video</button>
-            <video id="${item}" src="${folder}/${item}.mp4" style="width:100%; margin-top:10px;" controls></video>
-        </div>
-        `;
+            <video id="${item}" src="${folder}/${item}.mp4"
+              style="width:100%; margin-top:10px;" controls></video>
+          </div>
+          `;
         });
         document.getElementById("cardContainer").innerHTML = cardHTML;
       }
 
-      function loadWords() {
-        createCards(words, "words");
-      }
-      function loadAlphabets() {
-        createCards(alphabets, "alphabets");
-      }
-      function loadNumbers() {
-        createCards(numbers, "numbers");
-      }
+      function loadWords() { createCards(words, "words"); }
+      function loadAlphabets() { createCards(alphabets, "alphabets"); }
+      function loadNumbers() { createCards(numbers, "numbers"); }
 
-      /* ---------------------- VIDEO COMPLETE → SAVE PROGRESS ---------------------- */
       function playVideo(id) {
         let vid = document.getElementById(id);
         vid.play();
@@ -504,18 +162,15 @@
 
       updateProgress();
 
-      /* ---------------------- SEARCH ---------------------- */
       function searchCards() {
         let input = document.getElementById("searchBox").value.toLowerCase();
         let cards = document.querySelectorAll(".card");
-
         cards.forEach((card) => {
           let text = card.innerText.toLowerCase();
           card.style.display = text.includes(input) ? "block" : "none";
         });
       }
 
-      /* ---------------------- RESET PROGRESS ---------------------- */
       function resetProgress() {
         progress = {};
         localStorage.setItem("progress", "{}");

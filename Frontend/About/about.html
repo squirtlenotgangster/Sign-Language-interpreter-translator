@@ -5,266 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Us</title>
 
-<style>
-    /* RESET */
-    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
-
-    body{
-        background: var(--bg);
-        color: var(--text);
-        transition: 0.3s ease-in-out;
-    }
-
-    :root{
-        --bg:#ffffff;
-        --text:#222;
-        --card:#f5f5f5;
-        --nav:#ffffffcc;
-    }
-    body.dark{
-        --bg:#0d1117;
-        --text:#e6e6e6;
-        --card:#161b22;
-        --nav:#0d1117cc;
-    }
-
-    /* NAVBAR */
-    nav{
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        padding:15px 40px;
-        background:var(--nav);
-        backdrop-filter:blur(10px);
-        position:sticky;
-        top:0;
-        z-index:1000;
-    }
-
-    nav ul{
-        display:flex;
-        gap:30px;
-        list-style:none;
-    }
-    nav ul li a{
-        text-decoration:none;
-        color:var(--text);
-        font-size:16px;
-        font-weight:500;
-    }
-
-    .btn{
-        padding:8px 14px;
-        background:#4b7bec;
-        border-radius:6px;
-        color:white;
-        text-decoration:none;
-        font-weight:bold;
-    }
-
-    /* Toggle */
-    #toggle{
-        width:45px;
-        height:22px;
-        border-radius:20px;
-        background:#555;
-        position:relative;
-        cursor:pointer;
-        transition:0.3s;
-    }
-    #circle{
-        width:18px;
-        height:18px;
-        background:white;
-        border-radius:50%;
-        top:2px;
-        left:3px;
-        position:absolute;
-        transition:0.3s;
-    }
-    body.dark #toggle{
-        background:#eee;
-    }
-    body.dark #circle{
-        left:23px;
-        background:#111;
-    }
-
-    /* HERO */
-    .hero{
-        padding:80px 40px;
-        text-align:center;
-    }
-    .hero h1{font-size:42px;margin-bottom:15px;}
-    .hero p{font-size:18px;opacity:0.8;}
-
-    /* OUR MISSION */
-    .mission{
-        padding:60px 40px;
-        max-width:900px;
-        margin:auto;
-        text-align:center;
-    }
-    .mission h2{
-        font-size:32px;
-        margin-bottom:20px;
-    }
-    .mission p{
-        font-size:18px;
-        line-height:1.6;
-        opacity:0.85;
-    }
-
-    /* WHY CHOOSE US */
-    .why-choose{
-        padding:70px 40px;
-        text-align:center;
-        max-width:1100px;
-        margin:auto;
-    }
-
-    .why-choose h2{
-        font-size:32px;
-        margin-bottom:10px;
-    }
-
-    .choose-subtitle{
-        font-size:17px;
-        opacity:0.8;
-        margin-bottom:40px;
-    }
-
-    .choose-container{
-        display:grid;
-        grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
-        gap:25px;
-    }
-
-    .choose-card{
-        background:var(--card);
-        padding:25px 20px;
-        border-radius:12px;
-        box-shadow:0 3px 10px #0002;
-        transition:0.3s;
-        cursor:pointer;
-    }
-
-    .choose-card:hover{
-        transform:translateY(-8px);
-        box-shadow:0 6px 16px #0004;
-    }
-
-    .choose-icon{
-        font-size:40px;
-        margin-bottom:15px;
-    }
-
-    .choose-card h3{
-        font-size:20px;
-        margin-bottom:10px;
-    }
-
-    .choose-card p{
-        opacity:0.75;
-        line-height:1.4;
-    }
-
-    /* TEAM */
-    .team-section{
-        padding:60px 40px;
-        text-align:center;
-    }
-    .team-section h2{
-        font-size:32px;
-        margin-bottom:40px;
-    }
-    .team-container{
-        display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-        gap:25px;
-        max-width:1100px;
-        margin:auto;
-    }
-    .team-card{
-        background:var(--card);
-        padding:20px;
-        border-radius:12px;
-        text-align:center;
-        transition:0.3s;
-        box-shadow:0 2px 8px #0002;
-        cursor:pointer;
-    }
-    .team-card:hover{
-        transform:translateY(-8px);
-        box-shadow:0 4px 14px #0004;
-    }
-    .team-card img{
-        width:120px;
-        height:120px;
-        border-radius:50%;
-        object-fit:cover;
-        margin-bottom:15px;
-        transition:0.3s;
-    }
-    .team-card:hover img{
-        transform:scale(1.07);
-    }
-    .team-card h3{
-        margin-bottom:5px;
-        font-size:20px;
-    }
-    .team-card p{
-        opacity:0.7;
-    }
-
-    /* FAQ */
-    .faq{
-        max-width:800px;
-        margin:60px auto;
-        padding:0 20px;
-    }
-    .faq h2{text-align:center;margin-bottom:30px;font-size:32px;}
-    .faq-item{
-        background:var(--card);
-        padding:18px;
-        border-radius:10px;
-        margin-bottom:15px;
-        cursor:pointer;
-        transition:0.3s;
-    }
-    .faq-item:hover{
-        transform:scale(1.01);
-    }
-    .faq-question{
-        font-size:18px;
-        font-weight:bold;
-    }
-    .faq-answer{
-        margin-top:8px;
-        display:none;
-        opacity:0.8;
-        line-height:1.5;
-    }
-</style>
-
+<link rel="stylesheet" href="about.css">
 </head>
 <body>
 
 <!-- NAVBAR -->
-<nav>
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Courses</a></li>
-        <li><a href="#">Learn</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
-
-    <div style="display:flex;align-items:center;gap:20px;">
-        <div id="toggle"><div id="circle"></div></div>
-        <a href="#" class="btn">Get Started</a>
-    </div>
-</nav>
+<header class="navbar">
+     <div class="logo">
+            <img src="../../logo.png">
+        </div>
+        <nav>
+            <a href="../../index.html">Home</a>
+            <a href="../About/about.html">About us</a>
+            <a href="../Learning/learn.html">Learning</a>
+            <a href="../Pricing/pricing.html">Pricing</a>
+            <a href="../Contact_us/contact.html">Contact</a>
+        </nav>
+         <button class="btn-start">
+             <a href="../Login/indexlgn.html">Get Started</a>
+        </button>
+</header>
 
 <!-- HERO -->
 <section class="hero">
@@ -364,6 +124,41 @@
     </div>
 
 </section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-column">
+            <h3>Follow Us</h3>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">Youtube</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Links</h3>
+            <a href="../About/about.html">About us</a>
+            <a href="../Learning/learn.html">Learning</a>
+            <a href="../Pricing/pricing.html">Pricing</a>
+            <a href="../Contact_us/contact.html">Contact</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Made by</h3>
+            <p>SquirtleGang</p>
+            <p>Kolkata, West Bengal</p>
+            <p>India</p>
+        </div>
+
+    </div>
+
+    <p class="copyright">
+        Copyright © 2025 All rights reserved | This template is made with ♥
+    </p>
+</footer>
 
 <script>
 /* DARK MODE */
