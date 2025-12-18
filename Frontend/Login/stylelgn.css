@@ -9,6 +9,25 @@
   list-style: none;
 }
 
+/* BACK TO HOME BUTTON */
+.btn-start {
+  background: linear-gradient(135deg, #0e1e65, #35305c);
+  border: 2px solid #a293ca;
+  border-radius: 30px;
+  padding: 10px 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.btn-start a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
 /* Body Styles */
 body {
   display: flex;
@@ -219,6 +238,7 @@ form{
   border: 2px solid #fff;
   box-shadow: none;
 }
+
 
 
 
