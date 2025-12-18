@@ -336,15 +336,20 @@ body::before {
    THEME TOGGLE
 ========================= */
 .theme-toggle {
+  background: linear-gradient(135deg, #2a6fd6);
+  color: #ffffff;
+  border: 2px solid #a293ca;
+  border-radius: 30px;
+  padding: 10px 24px;
+  cursor: pointer;
   position: fixed;
   bottom: 22px;
-  left: 22px;
-  background: #f9f6ff;
-  color: #241fb3;
-  padding: 14px;
-  border-radius: 60px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-  cursor: pointer;
+  left: 20px;
+  z-index: 10;
+}
+
+.theme-toggle:hover {
+  background: linear-gradient(135deg, #1f3bb3);
 }
 
 /* =========================
