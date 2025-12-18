@@ -9,19 +9,28 @@
 }
 
 /* =========================
-   BODY – LIGHT MODE
+   BODY – 
 ========================= */
 body {
   min-height: 100vh;
+  background: #0e1e65; /* fallback solid */
+  color: #ffffff;
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
   background: linear-gradient(
     180deg,
-    #153ca8 0%,
-    #96bee4 50%,
-    #153ca8 100%
+    #162773 0%,
+    #35305c 50%,
+    #0e1e65 100%
   );
-  color: #d3e1fa;
-  transition: 0.3s ease;
+  z-index: -1;
 }
+
 
 /* =========================
    NAVBAR
@@ -118,7 +127,7 @@ body {
 .mission {
   max-width: 900px;
   margin: auto;
-  background: #f8f6ea;
+  background: #0d1b52;
   padding: 50px;
   border-radius: 22px;
 
@@ -175,7 +184,7 @@ body {
 
 /* Card – REFINED */
 .choose-card {
-  background: #f6f8ff;
+  background: #0d1b52;
   padding: 28px 26px 30px;
   border-radius: 20px;
   box-shadow: 0 10px 24px rgba(242, 15, 246, 0.18);
@@ -264,16 +273,16 @@ body {
 
 /* Card refined */
 .team-card {
-  background: #f6f8ff;
+  background: #0d1b52;
   padding: 28px 22px 30px;
   border-radius: 26px;
-  box-shadow: 0 12px 30px #de7f44;
+  box-shadow: 0 12px 30px #1b1a27;
   transition: 0.3s ease;
 }
 
 .team-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+  box-shadow: 0 20px 45px rgba(95, 79, 8, 0.25);
 }
 
 /* Image wrapper FIX (no harsh black) */
@@ -282,7 +291,7 @@ body {
   height: 160px;
   object-fit: cover;
   border-radius: 50%;
-  background: #e3e9ff;
+  background: #c9a758;
   padding: 6px;
   margin-bottom: 18px;
 }
@@ -290,7 +299,7 @@ body {
 /* Name */
 .team-card h3 {
   font-size: 20px;
-  color: #1f3bb3;
+  color: #fffdde;
   margin-bottom: 6px;
   font-weight: 600;
 }
@@ -298,28 +307,9 @@ body {
 /* Role */
 .team-card p {
   font-size: 14px;
-  color: #4b5fa7;
+  color: #dee3f5;
 }
 
-/* =========================
-   DARK MODE – TEAM
-========================= */
-body.dark .team-card {
-  background: #0d1b52;
-  box-shadow: 0 12px 30px rgba(66, 97, 113, 0.5);
-}
-
-body.dark .team-card img {
-  background: #1f3bb3;
-}
-
-body.dark .team-card h3 {
-  color: #ffd36a;
-}
-
-body.dark .team-card p {
-  color: #cdd9ff;
-}
 
 /* =========================
    FAQ
@@ -337,7 +327,7 @@ body.dark .team-card p {
 }
 
 .faq-item {
-  background: #f6f8ff;
+  background: #0d1b52;
   padding: 20px;
   border-radius: 18px;
   margin-bottom: 16px;
@@ -347,47 +337,15 @@ body.dark .team-card p {
 
 .faq-question {
   font-weight: 600;
-  color: #1f3bb3;
+  color: #ffd36a;
 }
 
 .faq-answer {
   display: none;
   margin-top: 10px;
-  color: #1e2f6f;
+  color: #efe19d;
 }
 
-/* =========================
-   DARK MODE
-========================= */
-body.dark {
-  background: linear-gradient(
-    180deg,
-    #162773 0%,
-    #35305c 50%,
-    #0e1e65 100%
-  );
-  color: #ffffff;
-}
-
-body.dark nav {
-  background: #0d1b52;
-}
-
-body.dark #circle {
-  left: 28px;
-  background: #ffd36a;
-}
-
-body.dark .mission,
-body.dark .choose-card,
-body.dark .faq-item {
-  background: #0d1b52;
-  color: #ffffff;
-}
-
-body.dark .faq-question {
-  color: #ffd36a;
-}
 
 /* =========================
    FOOTER

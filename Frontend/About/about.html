@@ -124,6 +124,9 @@
         <div class="faq-answer">We offer both free and premium versions based on usage and features.</div>
     </div>
 
+
+    <!-- Chatbot -->
+
 </section>
 <!DOCTYPE html>
 <html lang="en">
@@ -544,26 +547,18 @@
 </footer>
 
 <script>
-/* DARK MODE */
-let toggle = document.getElementById("toggle");
-let body = document.body;
-
-if(localStorage.getItem("theme") === "dark"){
-    body.classList.add("dark");
-}
-
-toggle.onclick = () =>{
-    body.classList.toggle("dark");
-    localStorage.setItem("theme", body.classList.contains("dark") ? "dark" : "light");
-};
+  
 
 /* FAQ */
-document.querySelectorAll(".faq-item").forEach(item=>{
-    item.addEventListener("click",()=>{
-        let ans = item.querySelector(".faq-answer");
-        ans.style.display = ans.style.display === "block" ? "none" : "block";
-    });
+document.querySelectorAll(".faq-item").forEach(item => {
+  item.addEventListener("click", () => {
+    const ans = item.querySelector(".faq-answer");
+    if (ans) {
+      ans.style.display = ans.style.display === "block" ? "none" : "block";
+    }
+  });
 });
+
 </script>
 
 </body>
