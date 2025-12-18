@@ -427,13 +427,59 @@
         function generateBotReply(input) {
           if (!input) return "Hi — how can I help you today?";
           const low = input.toLowerCase();
-          if (low.includes("price") || low.includes("cost"))
-            return "For pricing details, check the product page or tell me the product name.";
-          if (low.includes("shipping") || low.includes("delivery"))
-            return "Shipping times depend on your location — typically 3-7 business days.";
-          if (low.includes("hello") || low.includes("hi"))
-            return "Hello! What can I do for you today?";
-          return "Thanks for your message. We'll get back to you shortly — or try asking about order status, shipping, or products.";
+                    
+    /* INPUT & OUTPUT OF CHATBOT */
+
+    // 1. Core Services & Sign Language (Project Specific)
+    if (low.includes("how it works") || low.includes("how to use") || low.includes("gesture") || low.includes("works") || low.includes("use") || low.includes("process") || low.includes("what is this platform") || low.includes("what does this website do") || low.includes("what problem does this project solve")) {
+        return "GestureTalk AI uses your camera to track hand movements. Our AI then translates those gestures into text and speech in real-time.";
+    }
+    if (low.includes("asl") || low.includes("language") || low.includes("alphabet") || low.includes("isl") || low.includes("american sign language") || low.includes("indian sign language") || low.includes("bsl") || low.includes("bdsl") || low.includes("bengali sign language") || low.includes("number") || low.includes("word") || low.includes("sign language supported")) {
+        return "We currently specialize in American Sign Language (ASL). You can practice the alphabet and common phrases in our 'Learning' section.";
+    }
+
+    // 2. Technical Support (Camera & Permissions)
+    if (low.includes("camera") || low.includes("not working") || low.includes("access") || low.includes("wrong") || low.includes("problem") || low.includes("defect") || low.includes("bug") || low.includes("loading") || low.includes("page") || low.includes("blank") || low.includes("opening") || low.includes("permission") || low.includes("frozen") || low.includes("front") || low.includes("blur") || low.includes("lag") || low.includes("delay") || low.includes("webcam") || low.includes("image")) {
+        return "Please ensure you've allowed camera permissions in your browser. For best results, stay in a well-lit area.";
+    }
+
+    // 3. Pricing & Account (Business Logic)
+    if (low.includes("price") || low.includes("cost") || low.includes("free") || low.includes("$") || low.includes("₹") || low.includes("plan") || low.includes("trail") || low.includes("upgrade") || low.includes("downgrade") || low.includes("availability") || low.includes("discounts") || low.includes("monthly") || low.includes("yearly") || low.includes("pricing") || low.includes("bill") || low.includes("subscript") || low.includes("refund") || low.includes("payment") || low.includes("finance") || low.includes("buy") || low.includes("purchase")) {   
+        return "For pricing details, please check our 'Pricing' page. We offer both free and pro versions for schools and individuals.";
+    }
+    if (low.includes("login") || low.includes("account") || low.includes("password") || low.includes("sign in")  || low.includes("sign up") || low.includes("password reset") || low.includes("login error") || low.includes("login error") || low.includes("register")) {
+        return "You can log in using the 'Login' button. If you've forgotten your password, use the 'Forgot Password?' link on that page.";
+    }
+
+    // 4. Greetings & Politeness (Human Touch)
+    if (low.includes("hello") || low.includes("hi") || low.includes("hey") || low.includes("good morning") || low.includes("good evening") || low.includes("hi there") || low.includes("hello bot") || low.includes("good afternoon") || low.includes("noon") || low.includes("whats up")) {
+        return "Hello! I'm your GestureTalk assistant. How can I help you with sign language translation today?";
+    }
+    if (low.includes("thank") || low.includes("appreciate") || low.includes("that was helpful") || low.includes("great work") || low.includes("greeting")) {
+        return "You're very welcome! I'm happy to help you bridge the communication gap.";
+    }
+    if (low.includes("how are you") || low.includes("how are you doing") || low.includes("are you there") || low.includes("what are you up to") || low.includes("are you okay")) {
+        return "I'm functioning perfectly and ready to translate! How about you?";
+    }
+
+    // 5. Educational/Learning
+    if (low.includes("learn") || low.includes("study") || low.includes("lesson") || low.includes("practice") || low.includes("stduents") || low.includes("video solutions") || low.includes("learn alphabets") || low.includes("learn words") || low.includes("learn numbers") || low.includes("curious") || low.includes("tips") || low.includes("i donot know sign language") || low.includes("tips") || low.includes("beginner") || low.includes("amateur")) {
+        return "Want to learn sign language? Head over to our 'Learning' tab to find interactive tutorials and practice sessions!";
+    }
+
+    // 6. Navigation & Exit
+    if (low.includes("home") || low.includes("exit") || low.includes("back") || low.includes("previous") || low.includes("quit") || low.includes("stop") || low.includes("close chatbot") || low.includes("leave") || low.includes("return")) {
+        return "You can return to the main page by clicking the 'Home' button in the top-left corner.";
+    }
+
+    // 7. Mission/About
+    if (low.includes("who made this") || low.includes("creator") || low.includes("purpose") || low.includes("about") || low.includes("mission") || low.includes("goal") || low.includes("aim") || low.includes("why was this project created") || low.includes("team") || low.includes("overview") || low.includes("about project") || low.includes("project") || low.includes("motive")) {
+        return "GestureTalk AI was developed to bridge the communication gap between the deaf community and the hearing world.";
+    }
+
+    // Default Fallback
+    return "I'm still learning! Try asking about 'camera help', 'pricing', 'ASL support', or 'how it works'.";
+
         }
 
         // UI handlers
@@ -563,3 +609,4 @@ document.querySelectorAll(".faq-item").forEach(item => {
 
 </body>
 </html>
+
