@@ -79,15 +79,27 @@
 /* =========================
    BODY BACKGROUND (VIVID BLUE)
 ========================= */
+/* =========================
+   BODY – 
+========================= */
 body {
-    margin-top: 100px;
-    min-height: 100vh;
-background: linear-gradient(
+  min-height: 100vh;
+  background: #0e1e65; /* fallback solid */
+  color: #ffffff;
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
     180deg,
     #162773 0%,
     #35305c 50%,
     #0e1e65 100%
   );
+  z-index: -1;
 }
 
 /* =========================
