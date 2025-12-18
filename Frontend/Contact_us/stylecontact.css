@@ -212,6 +212,26 @@ body::before {
   background: #1f3bb3;
 }
 
+
+.form-alert {
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-alert.success {
+  background: #1f7a4d;
+  color: #eafff3;
+}
+
+.form-alert.error {
+  background: #7a1f1f;
+  color: #ffecec;
+}
+
+
 /* =========================
    FOOTER
 ========================= */
